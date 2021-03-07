@@ -1,0 +1,133 @@
+<%- include("partials/header"); -%>
+
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">ENT Treatment Path- Othercomplaints</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Other Complaints</h1>
+
+   <p class="fireBrick">Click the applicable button below to proceed</p>
+   <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll down</a> to move to the next page</p>
+
+
+   <form action="/ent_othercomplaints" method="post" id="medicalForm">
+    <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one
+     complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()"><b>I have other complaints
+    </b>
+    <br><br>
+
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RearPain" /><b>Recent onset(few hours or
+     days)</b>
+    of ear pain<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="CearPainHearingLoss" /><b>Longterm onset(more
+     than two
+     weeks)</b> of ear pain
+    <b><i>with hearing loss</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="CearPainNoHearingLoss" /><b>Longterm onset(more
+     than two
+     weeks)</b> of ear pain
+    <b><i>with no hearing loss</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="HeightBalanceSyn" />Ear discomfort or
+    <b>balance problems on <i>abrupt changes in height</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RearDischarge" /><b>Recent onset(few hours or
+     days)</b>
+    of Ear discharge<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="CearDischarge" /><b>Longterm onset(more than two
+     weeks)</b> of Ear discharge<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="BldearDischarge" /><b>Bloody</b> ear
+    discharge<br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="EarNoise" /> <b>Unusual noise</b> in the
+    ear<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Vertigo" />Abnormal sense of movement around you
+    especially when you move your
+    head(vertigo)<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="NoseBleeding" /> <b>Nose bleeding</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="NasalCongestion" />Nasal congestion or running
+    nose<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RsoreThroat" /><b>Recent onset(few hours or
+     days)</b> of
+    sore throat<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="CsoreThroat" /><b>Longterm recurrent(more than
+     two
+     weeks)</b> of sore throat<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RthroatPain" /><b>Recent onset(few hours or
+     days)</b> of
+    throat pain<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="CthroatPain" /><b>Longterm recurrent(more than
+     two
+     weeks)</b> of throat pain<br />
+    <br />
+
+    <br><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    
+
+    <br><br>
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+   <script>
+    var gotIt = document.getElementsByName("othersymptoms");
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+     if (no.checked) {
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     } else {
+      for (i = 0; i < othersymptoms.length; i++) {
+       myReka.push("one");
+       if (othersymptoms[i].checked) {
+        document.getElementById("submitbtn").removeAttribute("disabled");
+
+       }
+       if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+        document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+        document.getElementById("checker").checked = false
+       }
+      }
+     }
+
+
+    }
+
+
+    function symptomChecker() {
+     for (c = 0; c < gotIt.length; c++) {
+      if (gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked) {
+       gotIt[c].removeAttribute("disabled");
+      }
+     }
+    }
+
+    function stallBack() {
+     for (c = 0; c < gotIt.length; c++) {
+      gotIt[c].disabled = true;
+     }
+    }
+
+   </script>
+
+  </div>
+ </div>
+
+
+ <%- include("partials/footer"); -%>

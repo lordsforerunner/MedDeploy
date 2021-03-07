@@ -1,0 +1,110 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Brain Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/brain_maincomplaint" method="post" id="medicalForm">
+
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next page</p>
+
+    <input type="radio" name="mainsymptom"  value="Rheadaches" id="mainsymptom"><b>Recent onset(few hours to days)</b> of
+    recurrent <b>headaches</b><br>
+    <input type="radio" name="mainsymptom"  value="Cheadaches" id="mainsymptom"><b>Longterm(over two weeks)</b> of
+    recurrent
+    <b>headaches</b><br>
+    <input type="radio" name="mainsymptom"  value="LocalBodyWeakness" id="mainsymptom">Feeling of <b>numbness</b> or weakness
+    <b>in a
+     part</b> of the body<br>
+    <input type="radio" name="mainsymptom"  value="Paraparesis" id="mainsymptom">Feeling of <b>numbness</b> or weakness <b>in
+     both sides
+     of the body affecting either the upper or lower part</b><br>
+    <input type="radio" name="mainsymptom"  value="TransientWeakness" id="mainsymptom">Feeling of <b>numbness</b> or weakness
+    <b>on one
+     side of the body with symptoms disappearing within a day</b><br>
+    <input type="radio" name="mainsymptom"  value="OneSidedWeakness" id="mainsymptom">Feeling of <b>numbness</b> or weakness
+    <b>on one
+     side of the body affecting the arm, leg with or without the face</b><br>
+    <input type="radio" name="mainsymptom"  value="RgenBodyWeakness" id="mainsymptom"><b>Recent</b> onset(few hours to days)</b>
+    of <b>
+     general body weakness</b><br>
+    <input type="radio" name="mainsymptom"  value="CgenBodyWeakness" id="mainsymptom"><b>Longterm(over two weeks)</b> of
+    <b>
+     general
+     body weakness</b><br>
+    
+    <input type="radio" name="mainsymptom"  value="MemoryLoss" id="mainsymptom">You are experiencing <b>progressive
+     memory
+     loss</b><br>
+    <input type="radio" name="mainsymptom"  value="SpeechDifficulty" id="mainsymptom"><b>Speech Difficulty</b><br>
+    <input type="radio" name="mainsymptom"  value="RblurredVision" id="mainsymptom" /><b>Recent onset(few hours or
+     days)</b> of
+    <b>blurred vision</b><br />
+    <input type="radio" name="mainsymptom"  value="LackOfSteadyMovt" id="mainsymptom"><b>Lack of steady movement</b><br>
+    <input type="radio" name="mainsymptom"  value="BackpainsRadiatingLowerLimbs" id="mainsymptom"><b>Backpains</b> which
+    <b>radiates to the
+     lower limbs</b><br>
+    <input type="radio" name="mainsymptom"  value="Convulsion" id="mainsymptom">Recent episode of <b>Convulsion</b><br>
+    <input type="radio" name="mainsymptom"  value="CearPainHearingLoss" id="mainsymptom" /><b>Longterm onset(more than
+     two
+     weeks)</b>
+    of <b>hearing loss</b>
+    with or without Ear pain<br />
+    <input type="radio" name="mainsymptom"  value="RvomitingNoBld" id="mainsymptom" />
+    <b>Recent onset</b> of nausea or vomiting of previously consumed item with
+    <b> <i>no</i> blood nor unexplained black substance</b> <br />
+    <input type="radio" name="mainsymptom"  value="Confusion" id="mainsymptom" />
+    <b>Recent</b> onset(few hours or days)</b>
+    of <b>Confusion</b>
+
+    <br /><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+    
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+    
+   </form>
+
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

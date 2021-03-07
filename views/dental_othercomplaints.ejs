@@ -1,0 +1,122 @@
+<%- include("partials/header"); -%>
+
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Dental Treatment Path- Othercomplaints</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Other Complaints</h1>
+
+   <p class="fireBrick">Click the applicable button below to proceed</p>
+   <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll down</a> to move to the next page</p>
+
+
+   <form action="/dental_othercomplaints" method="post" id="medicalForm">
+    <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one
+     complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()"><b>I have other complaints
+    </b>
+    <br><br>
+
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Rheadaches" disabled><b>Recent onset(few hours to days)</b> of
+    recurrent
+    headaches<br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RearPain" disabled/><b>Recent onset(few hours or days)</b>
+    of ear pain<br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RhighFeverOnOff" disabled/><b>Recent onset of moderate to
+     high</b>
+    fever(more than 39<sup>0</sup>C
+    or 102<sup>0</sup>F ) that has been <b>on and off</b> in the last
+    <b>few hours or days</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="JawNeckBackPain" disabled/>Pain in the <b>jaw, neck or upper
+     back</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Toothache" disabled/>Tooth or teeth pain<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="BleedingGum" disabled/>Bleeding Gum<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CrookedTeeth" disabled/>Poor teeth arrangement(Crooked
+    teeth)<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Hyperdontia" disabled/>Extra tooth or teeth(Hyperdontia or
+    Supernumerary
+    teeth)<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="TeethSensitivity" disabled/>Sharp teeth discomfort induced by
+    intake of
+    cold or hot items(teeth sensitivity)<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CrackedTooth" disabled/>Cracked tooth or teeth<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="HabitualTeethGrinding" disabled/>Habitual grinding of your
+    teeth<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="TeethDiscoloration" disabled/>Teeth Discoloration<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RbadBreath" disabled/>Presence of <b>bad
+     breath(Halitosis or Fetor oris)</b> <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="MouthUlcersSores" disabled/>Mouth Ulcers or Sores(Canker Sores)
+    <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="DryMouth" disabled/>Dry Mouth(Xerostomia)
+
+    <br><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <br><br>
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+   <script>
+    var gotIt = document.getElementsByName("othersymptoms");
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+     if (no.checked) {
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     } else {
+      for (i = 0; i < othersymptoms.length; i++) {
+       myReka.push("one");
+       if (othersymptoms[i].checked) {
+        document.getElementById("submitbtn").removeAttribute("disabled");
+
+       }
+       if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+        document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+        document.getElementById("checker").checked = false
+       }
+      }
+     }
+
+
+    }
+
+    function symptomChecker() {
+     for (c = 0; c < gotIt.length; c++) {
+      if (gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked) {
+       gotIt[c].removeAttribute("disabled");
+      }
+     }
+    }
+
+    function stallBack() {
+     for (c = 0; c < gotIt.length; c++) {
+      gotIt[c].disabled = true;
+     }
+    }
+
+   </script>
+
+  </div>
+ </div>
+
+
+ <%- include("partials/footer"); -%>

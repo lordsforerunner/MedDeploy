@@ -1,0 +1,141 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Abdomen Treatment Path- Othercomplaints</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Other Complaints</h1>
+
+   <br>
+    <p class="fireBrick">Click the applicable button below to proceed</p>
+    <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll down</a> to move to the next
+     page</p>
+
+   <form action="/abdomen_othercomplaints" method="post" id="medicalForm">
+    
+    <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()"><b>I have other complaints
+    </b>
+    <br><br>
+
+    <input type="checkbox" name="othersymptoms" value="BlackStools" id="othersymptoms"  disabled/>Passage of <b>black</b> stools<br />
+    <input type="checkbox" name="othersymptoms" value="RedStools" id="othersymptoms" disabled/>Passage of <b>red</b> stools<br />
+    <input type="checkbox" name="othersymptoms"  value="SlimyDiarrhea" id="othersymptoms" disabled/>
+    <b>Frequent</b> passage of <b>slimy stools</b> <br />
+    <input type="checkbox" name="othersymptoms"  value="WateryDiarrhea" id="othersymptoms" disabled/>
+    <b>Frequent</b> passage of <b>watery stools</b> <br />
+    <input type="checkbox" name="othersymptoms"  value="Cdiarrhea" id="othersymptoms" disabled/>
+    <b>Frequent</b> passage of
+    <b>slimy or watery stools(recurrent for over 2 weeks)</b> <br />
+    <input type="checkbox" name="othersymptoms"  value="RvomitingNoBld" id="othersymptoms" disabled/>
+    <b>Recent onset</b> of nausea or vomiting of previously consumed item with
+    <b> <i>no</i> blood nor unexplained black substance</b> <br />
+    <input type="checkbox" name="othersymptoms"" value="RvomitingBld" id="othersymptoms" disabled/>
+    <b>Recent onset</b> of vomiting of previously consumed item
+    <b>with blood or unexplained black substance</b> <br />
+    <input type="checkbox" name="othersymptoms"  value="CvomitingNoBld" id="othersymptoms" disabled/>
+    <b>Longterm recurrent</b> nausea or vomiting with
+    <b> <i>no</i> blood nor unexplained black substance</b> <br />
+    <input type="checkbox" name="othersymptoms"  value="CvomitingBld" id="othersymptoms" disabled/>
+    <b>Longterm recurrent</b> vomiting
+    <b>with blood or unexplained black substance</b><br />
+    
+    <input type="checkbox" name="othersymptoms"  value="recurUpperAbdPain_fOH" id="othersymptoms" disabled/>Pain in the <b>upper</b>
+    abdomen
+    <b>that is on and off, <i>may or may not</i> be relieved by taking some
+     foodtypes or antacids</b>
+    <br />
+    <input type="checkbox" name="othersymptoms"  value="recurUpperAbdPain-f" id="othersymptoms" disabled/>Pain in the <b>upper</b> abdomen
+    <b>that is on and off worsened by taking some foodtypes</b> <br />
+    <input type="checkbox" name="othersymptoms"  value="sudAbdPain1" id="othersymptoms" disabled/><b>Sudden</b> worsening abdominal pain
+    with
+    <b> <i>no</i> past experience</b>
+    <br />
+    <input type="checkbox" name="othersymptoms"  value="gradAbdPain" id="othersymptoms" disabled/>
+    <b>Gradually</b> worsening general abdominal pain<br />
+    <input type="checkbox" name="othersymptoms"  value="LongTermRecurrentGenAbdominalPain" id="othersymptoms" disabled/>
+    <b>Longterm recurrent <i>general</i> </b> abdominal pain<br />
+    
+    <input type="checkbox" name="othersymptoms"  value="LongTermRecurrentLowerAbdominalPain" id="othersymptoms" disabled/>
+    <b>Longterm recurrent <i>lower</i> </b> abdominal pain<br />
+    
+    <input type="checkbox" name="othersymptoms"  value="HardStools" id="othersymptoms" disabled/>Stools are <b>hard</b> and difficult to
+    pass<br />
+    <input type="checkbox" name="othersymptoms"  value="RabdSwelling" id="othersymptoms" disabled/> <b>Recent</b> (few hours to days ) of
+    <b>abdominal swelling</b><br />
+    <input type="checkbox" name="othersymptoms"  value="LabdSwelling" id="othersymptoms" disabled/> <b>Longterm</b> (few weeks to months) of
+    <b>abdominal swelling</b><br />
+    
+
+    <br><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+    
+    <br><br>
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+   </form>
+
+   
+  
+   <script>
+     var gotIt = document.getElementsByName("othersymptoms");
+     var yes = document.getElementById("yes");
+     var no = document.getElementById("no");
+
+    function detective() {
+      var myReka = [];
+       document.getElementById('eureka').innerHTML = "";
+     if (no.checked) {
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     }else {
+      for (i = 0; i < othersymptoms.length; i++) {
+       myReka.push("one");
+       if (othersymptoms[i].checked) {
+        document.getElementById("submitbtn").removeAttribute("disabled");
+
+       }
+       if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+        document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+        document.getElementById("checker").checked = false
+       }
+      }
+     }
+
+     
+    }
+
+    function symptomChecker() {
+      for (c = 0; c < gotIt.length; c++) {
+       if (gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked) {
+        gotIt[c].removeAttribute("disabled");
+       }
+      }
+     }
+
+     function stallBack() {
+      for (c = 0; c < gotIt.length; c++) {
+       gotIt[c].disabled = true;
+      }
+     }
+   </script>
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

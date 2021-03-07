@@ -1,0 +1,152 @@
+<%- include("partials/header"); -%>
+
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Chest Treatment Path- Othercomplaints</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Other Complaints</h1>
+
+   <p class="fireBrick">Click the applicable button below to proceed</p>
+   <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll down</a> to move to the next page</p>
+
+
+   <form action="/chest_othercomplaints" method="post" id="medicalForm">
+
+   <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one
+       complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()"><b>I have other complaints
+  </b>
+  <br><br>
+  
+
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="PeriOrbitalEdema" disabled/>Swelling around the eyes<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="UnusualHeartBeat" disabled/>Unusual heart beat<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RightChestPain" disabled/><b>Right sided</b> chest pain that
+    is
+    on and off<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LeftChestPain" disabled/><b>Left sided or central</b> chest
+    pain
+    that is on and off<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="ContinuousChestPain" disabled/><b>Continuous(there all the
+     time
+     for hours or days)</b> chest pain that
+    is affected by movement of the chest<br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RdryCough" disabled/><b>Recent onset(few hours to days) of
+     dry</b> cough,
+    <b>not or hardly productive of phlegm</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CdryCough" disabled/><b>Longterm(over two weeks) of dry</b>
+    cough,
+    <b>not or hardly productive of phlegm</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RwetCough" disabled/><b>Recent onset(few hours to days)</b> of
+    cough
+    <b> productive of phlegm</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CwetCough" disabled/><b>Longterm(over two weeks)</b> of cough
+    <b> productive of phlegm</b><br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="BldCough" disabled/>Cough productive of <b>blood stained
+     phlegm</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="DyspnoeaOnExertion" disabled/>Difficulty with breathing
+    following climbing to
+    <b>the first floor of a building or similar effort</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="DyspnoeaAtRest" disabled/>Difficulty with breathing <b>even
+     when
+     you do nothing</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="recurUpperAbdPain_fOH" disabled/>Pain in the <b>upper</b>
+    abdomen
+    <b>that is on and off, <i>may or may not</i> be relieved by taking some
+     foodtypes or antacids</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="JawNeckBackPain" disabled/>Pain in the <b>jaw, neck or upper
+     back</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="OneSideBodyWeakness" disabled/>Weakness on <b>one side of the
+     body</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RgenBodyWeakness" disabled/><b>Recent onset(few hours to
+     days)</b> of <b> general body weakness</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CgenBodyWeakness" disabled/><b>Longterm(over two weeks)</b> of
+    <b> general body weakness</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="AbdSwelling" disabled/><b>Swelling</b> of the
+    <b>abdomen</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LegAnkleSwelling" disabled/><b>Swelling</b> of the <b>legs and
+     ankles</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="FaintFeeling" disabled/>Feeling like <b>fainting</b> on and
+    off<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RvomitingNoBld" disabled/><b>Recent onset</b> of <b>nausea or
+     vomiting</b> of previously consumed item
+    with <b> <i>no</i> blood nor unexplained black substance</b><br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RhighFeverOnOff" disabled/><b>Recent onset of moderate to
+     high fever</b> (more than 39<sup>0</sup>C
+    or 102<sup>0</sup>F ) that has been <b>on and off</b> in the last
+    <b>few hours or days</b>
+
+    <br><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <br><br>
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+   <script>
+    
+     var gotIt = document.getElementsByName("othersymptoms");
+     var yes = document.getElementById("yes");
+     var no = document.getElementById("no");
+
+    function detective() {
+    document.getElementById('eureka').innerHTML = "";
+    var myReka = [];
+     if (no.checked) {
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     }else {
+      for (i = 0; i < othersymptoms.length; i++) {
+       myReka.push("one");
+       if (othersymptoms[i].checked) {
+        document.getElementById("submitbtn").removeAttribute("disabled");
+
+       }
+       if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+        document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+        document.getElementById("checker").checked = false
+       }
+      }
+     }
+
+     
+    }
+
+    function symptomChecker() {
+      for (c = 0; c < gotIt.length; c++) {
+       if (gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked) {
+        gotIt[c].removeAttribute("disabled");
+       }
+      }
+     }
+
+     function stallBack() {
+      for (c = 0; c < gotIt.length; c++) {
+       gotIt[c].disabled = true;
+      }
+     }
+   </script>
+
+  
+   
+
+  </div>
+ </div>
+
+
+ <%- include("partials/footer"); -%>

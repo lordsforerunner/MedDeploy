@@ -1,0 +1,154 @@
+<%- include("partials/header"); -%>
+
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Mind Treatment Path- Othercomplaints</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Other Complaints</h1>
+
+   <p class="fireBrick">Click the applicable button below to proceed</p>
+   <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll down</a> to move to the next page</p>
+
+
+   <form action="/mind_othercomplaints" method="post" id="medicalForm">
+
+    <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one
+     complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()"><b>I have other complaints
+    </b>
+    <br><br>
+     
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Worry" />You wish you <b>worried less about things</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Disinterest" />You hardly have any interesting
+    engagement<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Dissatisfied" />You are dissatisfied with life<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Guilt" />You feel guilty about your setbacks or other
+    undesirable
+    situations around you<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Pessimism" />You think the future is bleak<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="HighLow" />Your mood fluctuates between extremes of
+    'highs' and
+    'lows'<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="ADHD1" />You experience <b>restlessness and agitation on
+     and off <i>since childhood</i></b> <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Irratability" />You easily get irritated and angry<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="ShortSleep" />You <b>don't to fall asleep easily</b> and
+    usually
+    <b>awaken rather early(less than five hours a day)</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="NonrestorativeSleep" />You find it <b>hard to wake
+     up</b> in the
+    morning<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Fatigue" />You usually feel <b>tired most of the
+     day</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Gluttony" />You have <b>insatiable desire for
+     food</b><br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="ADHD2" />Your <b>thought run 'hay wire' most
+     times</b>
+    and you find it <b>difficult to concentrate</b> on things when you need to, <b>since childhood</b> <br />
+
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="ChronicConfusedMemory" />You experience moments of
+    <b>confusion in your
+     thoughts and trouble remembering things <i>for more than 6 months</i> </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="WeightLoss" />Through delibrate measures, you have been <b>losing weight
+     excessively,</b> acknowledged by other people <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="WeghtGain" />You have been eating a lot and <b>gaining weight
+     excessively,</b> acknowledged by other people<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="PoorAppetite" />You have <b>poor appetite</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Suicide" />You sometimes <b>wish you were not alive
+     <i>or wish to harm your self</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Autism" />You <b>prefer to be alone</b> all the time
+    <b>since childhood</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="ShallowSleep" />Your <b>sleep get easily disturbed</b>
+    and you
+    <b>find it hard to catch it back</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Inertia" />You find it <b>difficult carrying out small
+     tasks</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Somatization" />You have <b>persistent body symptoms</b>
+    like
+    body pains, headaches, 'heart burn', movement sensations in your body or pressure feeling in your head<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="SubstanceAbuse" />You engage in <b>regular intake of
+     particular
+     substance(s) to make you feel better</b> though not medically prescribed<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="AnorexiaNervosa" />You have a <b>strong desire to be
+     thin</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="AuditoryHallucination" />You sometimes <b>hear voices
+     that other
+     people around you do not hear</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="VisualHallucination" />You sometimes <b>see things that
+     other
+     people around you do not</b>
+
+    <br><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <br><br>
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+   <script>
+    var gotIt = document.getElementsByName("othersymptoms");
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+     if (no.checked) {
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     } else {
+      for (i = 0; i < othersymptoms.length; i++) {
+       myReka.push("one");
+       if (othersymptoms[i].checked) {
+        document.getElementById("submitbtn").removeAttribute("disabled");
+
+       }
+       if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+        document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+        document.getElementById("checker").checked = false
+       }
+      }
+     }
+
+
+    }
+
+    function symptomChecker() {
+     for (c = 0; c < gotIt.length; c++) {
+      if (gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked) {
+       gotIt[c].removeAttribute("disabled");
+      }
+     }
+    }
+
+    function stallBack() {
+     for (c = 0; c < gotIt.length; c++) {
+      gotIt[c].disabled = true;
+     }
+    }
+
+   </script>
+   
+   
+   </div>
+
+  </div>
+ </div>
+
+
+ <%- include("partials/footer"); -%>

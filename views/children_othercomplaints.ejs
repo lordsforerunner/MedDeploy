@@ -1,0 +1,257 @@
+<%- include("partials/header"); -%>
+
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Children Treatment Path- Othercomplaints</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Other Complaints</h1>
+    <br>
+
+
+   <p class="fireBrick">Click the applicable button below to proceed</p>
+   <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll down</a> to move to the next page</p>
+
+   <form action="/children_othercomplaints" method="post" id="medicalForm">
+     <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()" ><b>I have other complaints
+</b>
+<br><br>
+
+
+    <h4 class="fireBrick">Fever</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RlowFever" disabled /><b>Low grade</b>
+    fever (less than 39<sup>0</sup>C or 102<sup>0</sup>F ) in the last
+    <b>few hours or days</b><br/>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="PlowFever" disabled/><b>Low grade</b>
+    fever (less than 39<sup>0</sup>C or 102<sup>0</sup>F ) persisting for
+    <b>more than one week</b><br />
+     <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RhighFeverOnOff" disabled /><b>Recent onset of moderate to
+     high</b>
+    fever(more than 39<sup>0</sup>C
+    or 102<sup>0</sup>F ) that has been <b>on and off</b> in the last
+    <b>few hours or days</b> <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RhighFeverCont" disabled /><b>Recent onset of moderate to
+     high</b>
+    fever(more than 39<sup>0</sup>C
+    or 102<sup>0</sup>F ) that has been <b>continuous</b> in the last
+    <b>few hours or days</b> <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="PhighFeverOnOff" disabled /><b>Persisting moderate to high</b>
+    fever(more than 39<sup>0</sup>C or
+    102<sup>0</sup>F ) that has been <b>on and off</b> for
+    <b>more than one week</b> <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="PhighFeverCont" disabled /><b>Persisting moderate to high</b>
+    fever(more than 39<sup>0</sup>C or
+    102<sup>0</sup>F ) that has been <b>continuous</b> for
+    <b>more than one week</b> <br /><br />
+    
+    <h4 class="fireBrick">Skin</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="SkinRash" disabled />Skin
+    rash<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="SkinSores" disabled />Skin
+    sores<br />
+    
+    <h4 class="fireBrick">Head</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Rheadaches" disabled /><b>Recent onset(few hours to days)</b>
+    of headaches<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Cheadaches" disabled /><b>Longterm(over two weeks)
+    </b>
+    of headaches<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Convulsion" disabled /><b>Convulsion</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Drowsiness" disabled />Unsusual sleepiness or <b>drowsiness</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Confusion" disabled />Recent onset
+    of <b>Confusion</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Irritable" disabled /><b>Irritable</b>
+    with general body discomfort or pains<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="PoorSleep" disabled />Poor
+    Sleep<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LocalBodyWeakness" disabled />Weakness of only a part or
+    portion of
+    the body<br /><br />
+    
+    <h4 class="fireBrick">Eyes</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="EyeDischarge" disabled />Eye
+    discharge<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="EyeRedness" disabled />Redness of the eyes<br />
+    
+    <h4 class="fireBrick">Ears</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RearPain" disabled /><b>Recent onset(few hours or days)</b>
+    of ear pain<br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RearDischarge" disabled /><b>Recent onset(few hours or
+     days)</b>
+    of Ear discharge<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CearDischarge" disabled /><b>Longterm onset(more than two
+     weeks)</b>
+    of Ear discharge<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="BldearDischarge" disabled /><b>Bloody</b> ear discharge<br />
+    
+    
+    <h4 class="fireBrick">Nose</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="NoseBleeding" disabled /> <b>Nose bleeding</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="NasalCongestion" disabled />Nasal congestion or running
+    nose<br />
+    
+    
+    <h4 class="fireBrick">Mouth</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RsoreThroat" disabled /><b>Recent onset(few hours or days)</b>
+    of sore throat<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CsoreThroat" disabled /><b>Longterm recurrent(more than two
+     weeks)</b>
+    of sore throat<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RthroatPain" disabled /><b>Recent onset(few hours or days)</b>
+    of throat pain<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CthroatPain" disabled /><b>Longterm recurrent(more than two
+     weeks)</b>
+    of throat pain<br />
+    
+    
+    <h4 class="fireBrick">Neck</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="ParotidSwelling" disabled>Swelling just below the ear(s)<br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RneckSwelling" disabled>Swelling at <b>other part of the neck
+     for
+     <i>few days or weeks</i></b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CneckSwelling" disabled>Swelling at <b>other part of the neck
+     for
+     <i>months or years</i></b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="NeckStiffness" disabled>Neck pain or stiffness<br>
+    
+    <h4 class="fireBrick">Chest</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Rcough" disabled /> <b>Cough of <i>less than a
+      week</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Ccough" disabled /> <b>Cough of <i>more than a
+      week</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RmouthBreathing" disabled><b>Recent onset(few hours or days)
+     of
+     difficulty with breathing</b> that is <b>improved through mouth breathing</b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LmouthBreathing" disabled><b>Longterm onset(more than two
+     weeks) of
+     difficulty with breathing</b> that is <b>improved through mouth breathing</b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RbreathingDiff" disabled><b>Recent onset(few hours or days) of
+     difficulty with breathing</b> that is <b><i>not</i> improved through mouth breathing</b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LbreathingDiff" disabled><b>Longterm onset(more than two
+     weeks) of
+     difficulty with breathing</b> that is <b><i>not</i> improved through mouth breathing</b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RchestPain" disabled><b>Recent onset(few hours or days) of
+     <i>chest
+      pain</i></b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LchestPain" disabled><b>Longterm onset(more than two weeks) of
+     <i>chest pain</i></b><br>
+    
+    <h4 class="fireBrick">Abdomen</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RVomiting" disabled><b>Recent onset(few hours or days) of
+     <i>vomiting</i></b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LVomiting" disabled><b> Longterm onset(more than two weeks) of
+     <i>vomiting</i></b><br>
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="recurUpperAbdPain_fOH" disabled />Pain in the <b>upper</b>
+    abdomen
+    <b>that is on and off, <i>may or may not</i> be relieved by taking some
+     foodtypes or antacids</b>
+    <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="recurUpperAbdPain-f" disabled />Pain in the <b>upper</b>
+    abdomen
+    <b>that is on and off worsened by taking some foodtypes</b> <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="sudAbdPain1" disabled /><b>Sudden</b>
+    worsening abdominal pain with <b> <i>no</i> past experience</b>
+    <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="gradAbdPain" disabled />
+    <b>Gradually</b> worsening general abdominal pain<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LongTermRecurrentGenAbdominalPain" disabled />
+    <b>Longterm recurrent <i>general</i></b> abdominal pain <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="LongTermRecurrentLowerAbdominalPain" disabled />
+    <b>Longterm recurrent <i>lower</i> </b> abdominal pain<br />
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="SlimyDiarrhea" disabled> <b>Frequent</b> passage of <b>slimy
+     stools</b> <br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="WateryDiarrhea" disabled> <b>Frequent</b> passage of <b>watery
+     stools</b> <br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="Cdiarrhea" disabled> <b>Frequent</b> passage of <b>slimy or
+     watery
+     stools(recurrent for over 2 weeks)</b> <br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="HardStools" disabled>Stools are <b>hard</b> and difficult to
+    pass<br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="BlackStools" disabled>Passage of <b>black</b> stools<br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RedStools" disabled>Passage of <b>red</b> stools<br>
+    
+    <h4 class="fireBrick">General</h4>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="RgenBodyPains" disabled> <b>Recent</b> onset(few hours to days) of general
+    <b>body pains</b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="CgenBodyPains" disabled> <b>Longterm</b> onset(more than two weeks) of
+    general <b>body pains</b><br>
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" value="GenBodyWeaknes" disabled />General body weakness<br />
+
+    <br><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <br><br>
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+ 
+  
+   <script>
+    var gotIt = document.getElementsByName("othersymptoms");
+      var yes = document.getElementById("yes");
+      var no = document.getElementById("no");
+   
+    function detective() {
+      var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+     if(no.checked){
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     }else{
+     for (i = 0; i < othersymptoms.length; i++) {
+         myReka.push("one");
+         if (othersymptoms[i].checked) {
+           document.getElementById("submitbtn").removeAttribute("disabled");
+
+         }
+         if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+           document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+           document.getElementById("checker").checked = false
+         }
+       }
+     }
+
+     
+    }
+    
+     
+    function symptomChecker(){
+        for(c = 0; c < gotIt.length;c++){
+          if(gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked)
+       {
+          gotIt[c].removeAttribute("disabled");
+       }
+        }
+    }
+ 
+    function stallBack(){
+      for (c = 0; c < gotIt.length; c++) {
+          gotIt[c].disabled = true;
+      }
+    }
+
+   </script>
+
+  </div>
+ </div>
+
+
+ <%- include("partials/footer"); -%>
+
+
+ 

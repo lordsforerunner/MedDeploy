@@ -1,0 +1,227 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Children Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/children_maincomplaint" method="post" id="medicalForm">
+
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next page</p>
+
+    
+    <h4 class="fireBrick" >Fever</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RlowFever" /><b>Low grade</b>
+    fever (less than 39<sup>0</sup>C or 102<sup>0</sup>F ) in the last
+    <b>few hours or days</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PlowFever" /><b>Low grade</b>
+    fever (less than 39<sup>0</sup>C or 102<sup>0</sup>F ) persisting for
+    <b>more than one week</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RhighFeverOnOff" /><b>Recent onset of moderate to
+     high</b>
+    fever(more than 39<sup>0</sup>C
+    or 102<sup>0</sup>F ) that has been <b>on and off</b> in the last
+    <b>few hours or days</b> <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RhighFeverCont" /><b>Recent onset of moderate to
+     high</b>
+    fever(more than 39<sup>0</sup>C
+    or 102<sup>0</sup>F ) that has been <b>continuous</b> in the last
+    <b>few hours or days</b> <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PhighFeverOnOff" /><b>Persisting moderate to high</b>
+    fever(more than 39<sup>0</sup>C or
+    102<sup>0</sup>F ) that has been <b>on and off</b> for
+    <b>more than one week</b> <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PhighFeverCont" /><b>Persisting moderate to high</b>
+    fever(more than 39<sup>0</sup>C or
+    102<sup>0</sup>F ) that has been <b>continuous</b> for
+    <b>more than one week</b> <br /><br />
+    
+    <h4 class="fireBrick">Skin</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="SkinRash" />Skin
+    rash<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="SkinSores" />Skin
+    sores<br />
+    
+    <h4 class="fireBrick">Head</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Rheadaches" /><b>Recent onset(few hours to days)</b>
+    of headaches<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Cheadaches" /><b>Longterm(over two weeks)
+    </b>
+    of headaches<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Convulsion" /><b>Convulsion</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Drowsiness" />Unsusual sleepiness or <b>drowsiness</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Confusion" />Recent onset
+    of <b>Confusion</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Irritable" /><b>Irritable</b>
+    with general body discomfort or pains<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PoorSleep" />Poor
+    Sleep<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LocalBodyWeakness" />Weakness of only a part or
+    portion of
+    the body<br /><br />
+    
+    <h4 class="fireBrick">Eyes</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="EyeDischarge" />Eye
+    discharge<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="EyeRedness" />Redness of the eyes<br />
+    
+    <h4 class="fireBrick" >Ears</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RearPain" /><b>Recent onset(few hours or days)</b>
+    of ear pain<br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RearDischarge" /><b>Recent onset(few hours or
+     days)</b>
+    of Ear discharge<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CearDischarge" /><b>Longterm onset(more than two
+     weeks)</b>
+    of Ear discharge<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BldearDischarge" /><b>Bloody</b> ear discharge<br />
+    
+    
+    <h4 class="fireBrick">Nose</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="NoseBleeding" /> <b>Nose bleeding</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="NasalCongestion" />Nasal congestion or running
+    nose<br />
+    
+    
+    <h4 class="fireBrick">Mouth</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RsoreThroat" /><b>Recent onset(few hours or days)</b>
+    of sore throat<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CsoreThroat" /><b>Longterm recurrent(more than two
+     weeks)</b>
+    of sore throat<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RthroatPain" /><b>Recent onset(few hours or days)</b>
+    of throat pain<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CthroatPain" /><b>Longterm recurrent(more than two
+     weeks)</b>
+    of throat pain<br />
+    
+    
+    <h4 class="fireBrick">Neck</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ParotidSwelling">Swelling just below the ear(s)<br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RneckSwelling">Swelling at <b>other part of the neck
+     for
+     <i>few days or weeks</i></b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CneckSwelling">Swelling at <b>other part of the neck
+     for
+     <i>months or years</i></b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="NeckStiffness">Neck pain or stiffness<br>
+    
+    <h4 class="fireBrick">Chest</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Rcough" /> <b>Cough of <i>less than a
+      week</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Ccough" /> <b>Cough of <i>more than a
+      week</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RmouthBreathing"><b>Recent onset(few hours or days)
+     of
+     difficulty with breathing</b> that is <b>improved through mouth breathing</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LmouthBreathing"><b>Longterm onset(more than two
+     weeks) of
+     difficulty with breathing</b> that is <b>improved through mouth breathing</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RbreathingDiff"><b>Recent onset(few hours or days) of
+     difficulty with breathing</b> that is <b><i>not</i> improved through mouth breathing</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LbreathingDiff"><b>Longterm onset(more than two
+     weeks) of
+     difficulty with breathing</b> that is <b><i>not</i> improved through mouth breathing</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RchestPain"><b>Recent onset(few hours or days) of
+     <i>chest
+      pain</i></b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LchestPain"><b>Longterm onset(more than two weeks) of
+     <i>chest pain</i></b><br>
+    
+    <h4 class="fireBrick">Abdomen</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RVomiting"><b>Recent onset(few hours or days) of
+     <i>vomiting</i></b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LVomiting"><b> Longterm onset(more than two weeks) of
+     <i>vomiting</i></b><br>
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="recurUpperAbdPain_fOH" />Pain in the <b>upper</b>
+    abdomen
+    <b>that is on and off, <i>may or may not</i> be relieved by taking some
+     foodtypes or antacids</b>
+    <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="recurUpperAbdPain-f" />Pain in the <b>upper</b>
+    abdomen
+    <b>that is on and off worsened by taking some foodtypes</b> <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="sudAbdPain1" /><b>Sudden</b>
+    worsening abdominal pain with <b> <i>no</i> past experience</b>
+    <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="gradAbdPain" />
+    <b>Gradually</b> worsening general abdominal pain<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LongTermRecurrentGenAbdominalPain" />
+    <b>Longterm recurrent <i>general</i></b> abdominal pain <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LongTermRecurrentLowerAbdominalPain" />
+    <b>Longterm recurrent <i>lower</i> </b> abdominal pain<br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="SlimyDiarrhea"> <b>Frequent</b> passage of <b>slimy
+     stools</b> <br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="WateryDiarrhea"> <b>Frequent</b> passage of <b>watery
+     stools</b> <br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Cdiarrhea"> <b>Frequent</b> passage of <b>slimy or
+     watery
+     stools(recurrent for over 2 weeks)</b> <br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="HardStools">Stools are <b>hard</b> and difficult to
+    pass<br>
+    <input type="radio" value="BlackStools" name="mainsymptom" id="mainsymptom">Passage of <b>black</b> stools<br>
+    <input type="radio" value="RedStools" name="mainsymptom" id="mainsymptom">Passage of <b>red</b> stools<br>
+    
+    <h4 class="fireBrick">General</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RgenBodyPains"> <b>Recent</b> onset(few hours to days) of general
+    <b>body pains</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CgenBodyPains"> <b>Longterm</b> onset(more than two weeks) of
+    general <b>body pains</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="GenBodyWeaknes" />General body weakness
+
+    <br /><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+  
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

@@ -1,0 +1,103 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">ENT Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/ent_maincomplaint" method="post" id="medicalForm">
+
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next page</p>
+
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RearPain" /><b>Recent onset(few hours or days)</b>
+    of ear pain<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CearPainHearingLoss" /><b>Longterm onset(more than
+     two
+     weeks)</b> of ear pain
+    <b><i>with hearing loss</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CearPainNoHearingLoss" /><b>Longterm onset(more than
+     two
+     weeks)</b> of ear pain
+    <b><i>with no hearing loss</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="HeightBalanceSyn" />Ear discomfort or
+    <b>balance problems on <i>abrupt changes in height</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RearDischarge" /><b>Recent onset(few hours or
+     days)</b>
+    of Ear discharge<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CearDischarge" /><b>Longterm onset(more than two
+     weeks)</b>
+    of Ear discharge<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BldearDischarge" /><b>Bloody</b> ear discharge<br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="EarNoise" /> <b>Unusual
+     noise</b> in the ear<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Vertigo" />Abnormal
+    sense of movement around you especially when you move your
+    head(vertigo)<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="NoseBleeding" /> <b>Nose bleeding</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="NasalCongestion" />Nasal congestion or running
+    nose<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RsoreThroat" /><b>Recent onset(few hours or days)</b>
+    of sore throat<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CsoreThroat" /><b>Longterm recurrent(more than two
+     weeks)</b>
+    of sore throat<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RthroatPain" /><b>Recent onset(few hours or days)</b>
+    of throat pain<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CthroatPain" /><b>Longterm recurrent(more than two
+     weeks)</b>
+    of throat pain<br />
+
+    <br /><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

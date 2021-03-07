@@ -1,0 +1,113 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Abdomen Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/abdomen_maincomplaint" method="post" id="medicalForm">
+    
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next
+      page</p>
+
+    <input type="radio" name="mainsymptom"  value="recurUpperAbdPain_fOH" id="mainsymptom" />Pain in the <b>upper</b> abdomen
+    <b>that is on and off, <i>may or may not</i> be relieved by taking some
+     foodtypes or antacids</b>
+    <br />
+    <input type="radio" name="mainsymptom"  value="recurUpperAbdPain-f" id="mainsymptom" />Pain in the <b>upper</b> abdomen
+    <b>that is on and off worsened by taking some foodtypes</b> <br />
+    <input type="radio" name="mainsymptom"  value="sudAbdPain1" id="mainsymptom" /><b>Sudden</b>
+    worsening abdominal pain with <b> <i>no</i> past experience</b>
+    <br />
+    <input type="radio" name="mainsymptom"  value="gradAbdPain" id="mainsymptom" />
+    <b>Gradually</b> worsening general abdominal pain<br />
+    <input type="radio" name="mainsymptom"  value="LongTermRecurrentGenAbdominalPain" id="mainsymptom" />
+    <b>Longterm recurrent <i>general</i></b> abdominal pain <br />
+    <input type="radio" name="mainsymptom"  value="LongTermRecurrentLowerAbdominalPain" id="mainsymptom" />
+    <b>Longterm recurrent <i>lower</i> </b> abdominal pain<br />
+    <input type="radio" name="mainsymptom"  value="RvomitingNoBld" id="mainsymptom" />
+    <b>Recent onset</b> of nausea or vomiting of previously consumed item with
+    <b> <i>no</i> blood nor unexplained black substance</b> <br />
+    <input type="radio" name="mainsymptom"  value="RvomitingBld" id="mainsymptom" />
+    <b>Recent onset</b> of vomiting of previously consumed item
+    <b>with blood or unexplained black substance</b> <br />
+    <input type="radio" name="mainsymptom"  value="CvomitingNoBld" id="mainsymptom" />
+    <b>Longterm recurrent</b> nausea or vomiting with
+    <b> <i>no</i> blood nor unexplained black substance</b> <br />
+    <input type="radio" name="mainsymptom"  value="CvomitingBld" id="mainsymptom" />
+    <b>Longterm recurrent</b> vomiting
+    <b>with blood or unexplained black substance</b><br />
+    
+    <input type="radio" name="mainsymptom" value="BlackStools" id="mainsymptom"  />Passage of <b>black</b> stools<br />
+    <input type="radio" name="mainsymptom" value="RedStools" id="mainsymptom"  />Passage of <b>red</b> stools<br />
+    <input type="radio" name="mainsymptom"  value="SlimyDiarrhea" id="mainsymptom" />
+    <b>Frequent</b> passage of <b>slimy stools</b> <br />
+    <input type="radio" name="mainsymptom"  value="WateryDiarrhea" id="mainsymptom" />
+    <b>Frequent</b> passage of <b>watery stools</b> <br />
+    <input type="radio" name="mainsymptom"  value="Cdiarrhea" id="mainsymptom" />
+    <b>Frequent</b> passage of
+    <b>slimy or watery stools(recurrent for over 2 weeks)</b> <br />
+    
+    <input type="radio" name="mainsymptom"  value="HardStools" id="mainsymptom" />Stools are <b>hard</b> and difficult to
+    pass<br />
+    <input type="radio" name="mainsymptom"  value="RabdSwelling" id="mainsymptom" /> <b>Recent</b> (few hours to days ) of
+    <b>abdominal swelling</b><br />
+    <input type="radio" name="mainsymptom"  value="LabdSwelling" id="mainsymptom" /> <b>Longterm</b> (few weeks to months) of
+    <b>abdominal swelling</b><br />
+    
+
+
+    <br><br><br>
+      <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+    
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+  
+   
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>
+
+

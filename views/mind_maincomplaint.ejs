@@ -1,0 +1,110 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Mind Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/mind_maincomplaint" method="post" id="medicalForm">
+
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next page</p>
+    <p class="fireBrick"><b>Please note=> If your symptoms is/are less than two weeks duration, go to other sections that cover the symptom(s) through the <a href="/">home page</a></b></p>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Worry" />You wish you <b>worried less about things</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Disinterest" />You hardly have any interesting
+    engagement<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Dissatisfied" />You are dissatisfied with life<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Guilt" />You feel guilty about your setbacks or other
+    undesirable situations around you<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Pessimism" />You think the future is bleak<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="HighLow" />Your mood fluctuates between extremes of 'highs'
+    and 'lows'<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Restlessness" />You experience <b>restlessness and agitation
+     on and off</b> with or without feeling of unsual heartbeat<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Irratability" />You easily get irritated and angry<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ShortSleep" />You <b>don't to fall asleep easily</b> and
+    usually <b>awaken rather early(less than five hours a day)</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="NonrestorativeSleep" />You find it <b>hard to wake up</b> in
+    the morning<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Fatigue" />You usually feel <b>tired most of the
+     day</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Gluttony" />You have <b>insatiable desire for food</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="HayWirethought" />Your <b>thought run 'hay wire' most
+     times</b> and you find it <b>difficult to concentrate</b> on things when you need to<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ConfusedMemory" />You experience <b>moments of confusion in
+     your thoughts</b> and <b>trouble remembering things</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="WeightLoss" />Through delibrate measures, you have been <b>losing weight
+      excessively,</b> acknowledged by other people <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="WeghtGain" />You have been eating a lot and <b>gaining weight
+      excessively,</b> acknowledged by other people<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PoorAppetite" />You have <b>poor appetite</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Suicide" />You sometimes <b>wish you were not alive <i>or
+      wish to harm yourself</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Loner" />You <b>prefer to be alone</b> all the time<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ShallowSleep" />Your <b>sleep get easily disturbed</b> and
+    you <b>find it hard to catch it back</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Inertia" />You find it <b>difficult carrying out small
+     tasks</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Somatization" />You have <b>persistent body symptoms</b> like
+    body pains, headaches, 'heart burn', movement sensations in your body or pressure feeling in your head<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="SubstanceAbuse" />You engage in <b>regular intake of
+     particular substance(s) to make you feel better</b> though not medically prescribed<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="AnorexiaNervosa" />You have a <b>strong desire to be
+     thin</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="AuditoryHallucination" />You sometimes <b>hear voices that
+     other people around you do not hear</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="VisualHallucination" />You sometimes <b>see things that other
+     people around you do not</b>
+
+    <br /><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

@@ -1,0 +1,99 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Men Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/men_maincomplaint" method="post" id="medicalForm">
+
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next page</p>
+
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="DysuriaMale" />You experience <b>pain while
+     urinating</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="FrequencyMale" />You pass rather <b>small quantity of urine
+     frequently</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PoorStream" />You experience <b>poor urine flow</b> while
+    urinating<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="UrinaryIncontinence" />You are <b>unable to hold urine</b>
+    once you feel pressed to urinate<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Hematuria" />You pass <b>blood in your urine</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PenileDischarge" />You experience <b>discharge from your
+     penis</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PenilePain" />You experience <b>continous pain in your
+     penis</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Gynecomastia" />You have <b> abnormal increase in your
+     breast(s) size</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PainfulScrotalSwelling" />You have <b>painful swelling in
+     your scrotum or testicles</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PainlessScrotalSwelling" />You have <b>swelling in your
+     scrotum or testicles that is <i>not painful</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PainfulScrotumTesticles" />Pain in the scrotum/testicles
+    <b>without swelling</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ErectileDysfunction" />You have <b>difficulty getting or
+     maintaining an erection</b>(erectile dysfunction)<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LowLibido" />You <b>lack adequate sexual drive</b>(low
+    libido)<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="DifficultToEjaculate" />You find it <b>difficult to
+     ejaculate</b> or you do not ejaculate at all<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="EarlyEjaculation" />You <b>ejaculate earlier</b> than you
+    wish all or most of the time(premature ejaculation) <br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RgenBodyPains"> <b>Recent</b> onset(few hours to days) of general
+    <b>body pains</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CgenBodyPains"> <b>Longterm</b> onset(more than two weeks) of
+    general <b>body pains</b>
+
+    <br /><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

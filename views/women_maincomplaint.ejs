@@ -1,0 +1,161 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Women Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/women_maincomplaint" method="post" id="medicalForm">
+
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next page</p>
+
+    <h4 class="fireBrick">Breasts</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="OneBreastPain" />You have <b>pain in <i>one</i>
+     breast</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BothBreastPainCyclic" />You have <b>pain in
+     <i>both</i>
+     breasts which <i>fluctuates with menstrual cycle</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BothBreastPain" />You have <b>pain in <i>both</i>
+     breasts
+     which <i><u>does not</u> fluctuate with menstrual cycle</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="OneBreastSwelling" />You have <b>swelling in
+     <i>one</i>
+     breast</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BothBreastSwellingCyclic" />You have <b>swelling in
+     <i>both</i> breasts
+     which <i>fluctuates with menstrual cycle</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BothBreastSwelling" />You have <b>swelling in
+     <i>both</i>
+     breasts which
+     <i><u>does not</u> fluctuate with menstrual cycle</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BreastRash" />You have <b>skin change or rash
+     <i>only</i> on
+     the breast(s)</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="OneBreastNippleDischarge" />You have <b>nipple
+     discharge</b>
+    from <b>one breast</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BothBreastNippleDischarge" />You have <b>nipple
+     discharge</b>
+    from <b>both breasts</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BloodyNippleDischarge" />You have <b>bloody nipple
+     discharge</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="OneArmpitSwelling" />Swelling(s) under <b><i>one</i>
+     armpit</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="BothArmpitSwelling" />Swellings under <b><i>both</i>
+     armpit</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="NippleInversion" />One or both <b>nipples became
+     inverted</b>
+    in the last few days, weeks or months<br /><br>
+    
+    
+    <h4 class="fireBrick">Lower Abdomen(below the navel or belly button)</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="suddenLowerAbdominalPain" /><b>Recent sudden</b> gripping
+    <b>lower
+    abdominal pain</b> with <b>no past
+    experience(outside mentrual period)</b><br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LongTermRecurrentLowerAbdominalPain" /><b>Longterm
+    recurrent</b>
+    lower abdominal pain <u>outside menses</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="SevereDysmenorrhea" />You experience <u>pain during
+    menses</u>
+    <b>severe enough to disrupt your daily activities</b><br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="HeavyMenses" />You experience <b>heavy
+     menstrual
+     flow</b> as defined by menses <b><i>lasting more than seven(7) days or having to
+      change your pads many times a day or passing clots during menses</i></b><br />
+    
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="IrregularMenses" />The interval between your mentrual
+    cycles
+    changes widely from time to time by more than a week<b>(irregular menses)</b> <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Infertility" />You have made <b>unsuccessfull effort
+     at
+     getting pregnant</b> for over a year cohabiting with your spouse<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Habitual Abortion" />You have been <b>losing
+     pregnancy
+     repeatedly</b> before maturity<br /><br>
+    
+    
+    <h4 class="fireBrick">External Genital</h4>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RfrequencyFemale" /><b>Recent onset(few hours or
+     days)</b>
+    of passing <b>small quantity of urine often</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LfrequencyFemale" /><b>Longterm onset(more than two
+     weeks)</b>
+    of passing <b>small quantity of urine often</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="DysuriaFemale" />You have <b>pain while
+     urinating</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RvaginalItching" /><b>Recent onset(few hours or days)
+     of
+     <i>vaginal itching</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LvaginalItching" /><b>Longterm onset(more than two
+     weeks) of
+     <i>vaginal itching</i></b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RvaginalDischarge" /><b>Recent onset(few hours or
+     days)</b>
+    of change in the <b>colour</b> , <b>odour</b> or <b>quantity</b> of your <b>vaginal discharge or
+     secretions</b>
+    <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LvaginalDischarge" /><b>Longterm onset(more than two
+     weeks)</b> of change in the <b>colour</b> , <b>odour</b> or <b>quantity</b> of your
+    <b>vaginal discharge or secretions</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PainfulCoitus" />You have <b>pain during
+     coitus</b><br>
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="abnVagBleeding" />You experience <b>abnormal vaginal bleeding</b><br><br>
+    
+
+    <br /><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

@@ -1,0 +1,119 @@
+<%- include("partials/header"); -%>
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Eye Treatment Path- Maincomplaint</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Main Complaint</h1>
+
+   <br>
+
+
+   <form action="/eye_maincomplaint" method="post" id="medicalForm">
+
+    <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next page</p>
+
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="OneEyeWeakVision" /><b>Weak vision</b> in <u>one eye</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="Asymmetry" />Lack
+    of symmetry when you look at your eyes in the mirror<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="OneEyeUnconMovt" />Uncontrollable movement in <u>one
+     eye</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ColorDef" />Difficulty with differentiating
+    colors<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RblurredVision" /><b>Recent onset(few hours or
+     days)</b> of
+    <u>blurred vision</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CblurredVision" /><b>Longterm onset(more than two
+     weeks)</b>
+    of <u>blurred vision</u><br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RbothEyesPain" /><b>Recent onset(few hours or
+     days)</b>
+    of both <u>eyes pain</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CbothEyesPain" /><b>Longterm onset(more than two
+     weeks)</b> of
+    both <u>eyes pain</u> <br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="OneEyePain" />Pain in
+    <b>one eye</b><br />
+    
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="EyesRedness" />Eyes
+    redness<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="LightSensitivity" />Light sensitivity<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="WeakVisionClose" />Weak vision for objects that are
+    <u>close</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="RpepperySensatn" /><b>Recent onset(few hours or
+     days)</b> of
+    burning or peppery sensation
+    in the eyes<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CpepperySensatn" /><b>Longterm onset(more than two
+     weeks)</b>
+    of burning or peppery
+    sensation in the eyes<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ExTearing" />Excessive <b>tearing</b> from the eyes<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="HaloVision" />You
+    see <b>bright circles or rings around a light source</b><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="SpottyVision" /><b>Sudden</b> appearance or increase in
+    seeing <b>spots
+     or flashes of light</b> in
+    your vision field<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="PoorNightVision" />Difficulty with seeing clearly <u>at
+     night</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ReyesItching" /><b>Recent onset(few hours or
+     days)</b>
+    of <u>eyes itching</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="CeyesItching" /><b>Longterm onset(more than two
+     weeks)</b>
+    of recurrent <u>eyes itching</u><br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="ParticlesInEye" />Feeling of particles in the
+    eyes<br />
+    <input type="radio" name="mainsymptom" id="mainsymptom" value="EyesDischarge" /><b>Eyes discharge</b>
+
+    <br /><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+
+   <script>
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+
+     for (i = 0; i < mainsymptom.length; i++) {
+      myReka.push("one");
+      if (mainsymptom[i].checked) {
+       document.getElementById("submitbtn").removeAttribute("disabled");
+
+      }
+      if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+       document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+       document.getElementById("checker").checked = false
+      }
+     }
+    }
+   </script>
+
+  </div>
+
+
+ </div>
+
+
+
+
+
+ <%- include("partials/footer"); -%>

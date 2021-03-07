@@ -1,0 +1,220 @@
+<%- include("partials/header"); -%>
+
+
+ <div class="templateBody-container">
+
+  <div class="templateBody-topBreadcrumb">
+   <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Skin Treatment Path- Othercomplaints</span>
+   </div>
+  </div>
+  <br><br>
+  <div class="templateBody-main">
+
+   <h1>Other Complaints</h1>
+
+   <p class="fireBrick">Click the applicable button below to proceed</p>
+   <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll down</a> to move to the next page</p>
+
+
+   <form action="/skin_othercomplaints" method="post" id="medicalForm">
+
+    <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one
+     complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()"><b>I have other complaints
+    </b>
+    <br><br>
+
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RashNotItchy" /><b>Skin change or rash is <i>not
+      itchy</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RashItchy" /><b>Skin change or rash is <i>
+      itchy</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RashWet" /><b>Skin change or rash <i>produces
+      wetness
+      over it</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RashDry" /><b>Skin change or rash is <i>
+      dry</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RashComeGo" /><b>Skin change or rash <i> come
+      and
+      go</i></b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="FamilyHx" />A <b>relative or relatives</b> of
+    mine
+    has/had <b>similar</b> skin condition<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="FamilyHxAtopy" />I and/or my first degree
+    relative(s)
+    have/has one or more of the following; <ul>
+     <li>Recurrent difficulty with breathing or Asthma</li>
+     <li>Recurrent itchy or red eyes</li>
+     <li>Recurrent running or stuffy nose</li>
+    </ul><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="ChildhoodRash" />You were told or you know you
+    had
+    <b>skin problem as a baby or child</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="WorsenedBySun" />Skin condition worsens or is
+    triggered
+    by exposure to <b>sunlight</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="OccupationalHx" />One or more <b>colleague(s) at
+     work</b> have/has <b>similar</b> skin change or rash<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RashExposedArea" />Rash is present on areas of
+    your skin
+    <b>not covered by your usual dressing</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RoutineDrugs" />You are on some <b>routine
+     drugs</b> for
+    other health condition(s)<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Contagious" />You have someone else with <b>whom
+     you
+     interact</b> with <b>similar</b> skin condition<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="ColdEnvironment" />You are mostly exposed to
+    <b>cold
+     environment</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="HotEnvironment" />You are mostly exposed to
+    <b>hot
+     environment</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="FastSpread" /><b>Skin change or rash</b> started
+    small
+    but <b><i>spreading fast</i></b>(within hours or days)<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="SlowSpread" /><b>Skin change or rash </b> has
+    been
+    <b><i>spreading slowly</i></b>(over weeks, months or years)<br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="EyesRedness" />You have associated <b>redness of
+     the
+     eye(s)</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="DrugReaction" /><b>Skin change or rash</b>
+    started
+    following the <b>intake of a particular drug or product</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="Irritant" />Rash got <b>worse after local
+     application of
+     some medicament</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="PainfulRash" />Skin change or rash is
+    <b>painful</b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="HairLoss" />You have been <b>losing your
+     hair</b> <br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="SpoonNails" />You have some degree of
+    <b>deepening of
+     your nails(spoon nails)</b><br />
+    
+    
+    
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RgenBodyRash" /><b>Recent </b>onset(few hours to
+    days)
+    of <b>
+     Skin change or rash <i>all over your body</i> </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="LgenBodyRash" /><b>Longterm </b>onset(more than
+    two
+    weeks)
+    of <b> Skin change or rash <i>all over your body</i> </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RsymetricalRash" /><b>Recent </b>onset(few hours
+    to
+    days) of <b>
+     Skin change or rash <i>at similar parts on both sides of the body</i> </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="LsymetricalRash" /><b>Longterm </b>onset(more
+    than two
+    weeks)
+    of <b> Skin change or rash <i>at similar parts on both sides of the body</i> </b><i>(corresponding
+     parts)</i><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RasymetricalRash" /><b>Recent </b>onset(few
+    hours to
+    days) of <b>
+     Skin change or rash <i>on part of your body with no corresponding similar rash on the other side of the
+      body</i>
+    </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="LasymetricalRash" /><b>Longterm </b>onset(more
+    than two
+    weeks)
+    of <b> Skin change or rash <i>on part of your body with no corresponding similar rash on the other side of
+      the
+      body</i>
+    </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RgenBodyItching" /><b>Recent </b>onset(few hours
+    to
+    days) of <b>
+     itching <i>all over your body</i>
+    </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="LgenBodyItching" /><b>Longterm </b>onset(more
+    than two
+    weeks)
+    of <b>itching <i>all over your body</i>
+    </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RsymetricalItching" /><b>Recent </b>onset(few
+    hours to
+    days) of
+    <b>itching <i>at similar parts on both sides of the body</i>
+    </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="LsymetricalItching" /><b>Longterm </b>onset(more
+    than
+    two weeks)
+    of <b>itching <i>at similar parts on both sides of the body</i> </b><i>(corresponding parts)</i><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="RasymetricalItching" /><b>Recent </b>onset(few
+    hours to
+    days) of
+    <b> itching <i>on part of your body with no corresponding
+      similar rash on the other side of the body</i> </b><br />
+    <input type="checkbox" name="othersymptoms" id="othersymptoms" disabled value="LasymetricalItching" /><b>Longterm
+    </b>onset(more than
+    two weeks)
+    of <b> itching <i>on part of your body with no corresponding similar rash on the other side of the
+      body</i> </b><br />
+
+    <br><br><br>
+    <h3 class="fireBrick" id="eureka"></h3><br>
+    <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click when done</b>
+    <br><br>
+
+    <br><br>
+    <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+    <br><br>
+    <button type="reset" onClick="window.location.reload();">Reset</button>
+
+   </form>
+
+
+   <script>
+    var gotIt = document.getElementsByName("othersymptoms");
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
+
+    function detective() {
+     var myReka = [];
+     document.getElementById('eureka').innerHTML = "";
+     if (no.checked) {
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     } else {
+      for (i = 0; i < othersymptoms.length; i++) {
+       myReka.push("one");
+       if (othersymptoms[i].checked) {
+        document.getElementById("submitbtn").removeAttribute("disabled");
+
+       }
+       if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+        document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+        document.getElementById("checker").checked = false
+       }
+      }
+     }
+
+
+    }
+
+    function symptomChecker() {
+     for (c = 0; c < gotIt.length; c++) {
+      if (gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked) {
+       gotIt[c].removeAttribute("disabled");
+      }
+     }
+    }
+
+    function stallBack() {
+     for (c = 0; c < gotIt.length; c++) {
+      gotIt[c].disabled = true;
+     }
+    }
+
+   </script>
+
+  </div>
+ </div>
+
+
+ <%- include("partials/footer"); -%>
