@@ -393,7 +393,7 @@ app.get("/abdomen_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
 
    res.render("abdomen_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -570,7 +570,7 @@ app.get("/bone_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
      
    res.render("bone_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -731,7 +731,7 @@ app.get("/brain_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
      
    res.render("brain_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -892,7 +892,7 @@ app.get("/chest_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
      
    res.render("chest_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -1053,7 +1053,7 @@ app.get("/children_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
      
    res.render("children_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -1215,7 +1215,7 @@ app.get("/dental_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
      
    res.render("dental_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -1390,7 +1390,7 @@ app.get("/ent_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
 
    res.render("ent_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -1560,7 +1560,7 @@ app.get("/eye_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
 
    res.render("eye_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -1729,7 +1729,7 @@ app.get("/men_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
 
    res.render("men_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -1896,7 +1896,7 @@ app.get("/mind_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
 
    res.render("mind_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -2065,7 +2065,7 @@ app.get("/skin_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
 
    res.render("skin_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
@@ -2237,7 +2237,7 @@ app.get("/women_diagnosis", function(req, res) {
     mainCauses = [];
     recommendations = [];
     
-     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deened necessary.'}
+     if(results.length == 0){possibilitiesAlt = 'There appear to be no return for your input, please contact us with your complaint(s) stating your age and gender, so we can accommodate them in the future and do any other deemed necessary.'}
    res.render("women_diagnosis", {Results: results, PossibilitiesAlt: possibilitiesAlt });
 });
 app.get("/women_advice", function(req, res) {
