@@ -114,6 +114,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 20%;
 }
 .med-branch {
   position: absolute;

@@ -46,11 +46,11 @@ const Diag = mongoose.model("Diag", diagSchema);
 
 var  thisComplaint
  = new Diag ({
- systontainer: "Dentalpontainer",
+ systontainer: "Brainpontainer",
  age: "ma",
- gender: "f",
- symptom:"JawNeckBackPain" ,
- causes: ['Acute Coronary Syndrome', 'Pericarditis', 'Bruxism(Habitual Teeth Grinding)', 'Habitual Gum Chewing', 'Dental Abscess']
+ gender: "m",
+ symptom:"PlowFever" ,
+ causes: ['Viral Infection', 'Tuberculosis', 'Cancer', 'Autoimmune Diseases', 'Aphthous Ulcer(Canker Sores)', 'Inflamatory Disease',]
        
 });
 
@@ -69,34 +69,13 @@ plan: String
 
 
 
-[
-     'Dilated Cardiomyopathy',
-  'Amyloidosis',
-  'Infective Endocarditis',
-  'Valvular Heart Disease',
-  'Congenital Heart Defects',
-  'Coronary Artery Desease',
-  'Hypertension',
-  'Diabetes Mellitus',
-  'Hypoglycemia(low blood sugar)',
-  'Smoking',
-  'Excessive Alcohol Intake',
-  'Excessive Caffeine Intake',
-  'Substance Use Disorder',
-  'Emotional Stress',
-  'Physical Stress',
-  'Drug Induced',
-  'Myocarditis'    
-]
-
-
 const Act = mongoose.model("Act", actSchema);
 
 var thisAction = new Act ({
-   systaction:'Dentalpaction' ,
-   age: "i",
-   gender: "f",   
-   impression:'Lasting Thumb or Bottle Sucking(Myofunctional Habits)'  ,
+   systaction:'Brainpaction' ,
+   age: "ma",
+   gender: "m",   
+   impression: 'Tuberculosis' ,
    plan:   "Go to the hospital"
 });
 
@@ -117,16 +96,18 @@ const diagcondSchema =  new mongoose.Schema({
 const Diagcond = mongoose.model("Diagcond", diagcondSchema);
 
 //  "notp"  'pplus'   'undefp'
+// 'Pregnancy Unlikely'
 
 var  thisComplaintcond
  = new Diagcond ({
  systontainer: "Womenpontainer",
  age: "ea",
- cond: 'undefp' ,
- symptom:"BothBreastSwelling" ,
- causes: ['Fibrocystic Breast(Fibroadenosis)', 'Breast Injury',]
+ cond: 'undefp',
+ symptom:"CgenBodyWeakness" ,
+ causes: [ 'Coronary Artery Desease', 'Thyroid Disease', 'Amyloidosis', 'Anemia', 'Emotional Stress', 'Physical Stress', 'Sleep Deprivation', 'Heart Failure', 'Poorly Controlled Diabetes Mellitus', 'Valvular Heart Disease', 'Stroke','Drug Induced',]
 
 });
+
 
 //thisComplaintcond.save();
 
@@ -147,8 +128,8 @@ const Actcond = mongoose.model("Actcond", actcondSchema);
 var thisActioncond = new Actcond ({
    systaction: "Womenpaction",
    age: "ea",
-   cond:'pplus' ,   
-   impression: 'Stroke' ,
+   cond:'undefp' ,   
+   impression: 'Valvular Heart Disease' ,
    plan:   "Go to the hospital"
 });
 
@@ -211,10 +192,10 @@ var thisActioncond = new Actcond ({
 
 
 //   Act.findOne({
-//    systaction: "Childrenpaction",
-//    age: "c",
+//    systaction: "Brainpaction",
+//    age: "i",
 //    gender: "m",   
-//    impression:'Smoking' ,
+//    impression:'Tuberculosis' ,
 //    //plan:   "Go to the hospital"
 //  },
 //  function(err, foundDoc){
@@ -223,10 +204,10 @@ var thisActioncond = new Actcond ({
 
 
 //   Diag.findOne({
-//    systontainer: "Abdopontainer",
-//   age: "ya",
+//    systontainer: "Brainpontainer",
+//   age: "i",
 //  gender: "m",
-//  symptom:"HardStools"
+//  symptom:"RlowFever"
 //  },
 //  function(err, foundDoc){
 //   if(err){console.log(err)}else {console.log(foundDoc)}
@@ -278,20 +259,21 @@ var thisActioncond = new Actcond ({
 
 // Diagcond.findOne({
 // systontainer: "Womenpontainer",
-//  age: "t",
-//  cond: "undefp",
-//  symptom:"Infertility"
+//  age: "ma",
+//  cond:"notp" ,
+//  symptom:"RlowFever"
  
 //  },
 //  function(err, foundDoc){
 //   if(err){console.log(err)}else {console.log(foundDoc)}
 //  });
 
+
 //   Actcond.findOne({
 //  systaction: "Womenpaction",
-//  age: "ea",
-//  cond:"notp" ,
-//  impression: 'Menopause'
+//  age: "t",
+//  cond: 'undefp',
+//  impression: 'Tonsilitis'
 //  },
 //  function(err, foundDoc){
 //   if(err){console.log(err)}else {console.log(foundDoc)}
@@ -303,11 +285,11 @@ var thisActioncond = new Actcond ({
 
 
 //   Actcond.deleteOne({
-//       systaction: "Womenpaction",
-//       age: "ea",
-//       cond:'undefp' ,
-//       impression: "RfrequencyFemale",
-//       plan:"Go to the hospital"
+//    systaction: "Womenpaction",
+//    age: "ea",
+//    cond:'pplus' ,   
+//    impression:'Anemia'  ,
+//    plan:   "Go to the hospital"
       
 //     }, function(err){
 //      if(err){
