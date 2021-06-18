@@ -46,12 +46,25 @@ const Diag = mongoose.model("Diag", diagSchema);
 
 var  thisComplaint
  = new Diag ({
- systontainer: "Brainpontainer",
- age: "ma",
+ systontainer: "Menpontainer",
+ age: "ya",
  gender: "m",
- symptom:"PlowFever" ,
- causes: ['Viral Infection', 'Tuberculosis', 'Cancer', 'Autoimmune Diseases', 'Aphthous Ulcer(Canker Sores)', 'Inflamatory Disease',]
-       
+ symptom:'CgenBodyWeakness',
+ causes: [
+    'Coronary Artery Desease',
+    'Thyroid Disease',
+    'Amyloidosis',
+    'Anemia',
+    'Emotional Stress',
+    'Physical Stress',
+    'Sleep Deprivation',
+    'Heart Failure',
+    'Poorly Controlled Diabetes Mellitus',
+    'Valvular Heart Disease',
+    'Stroke',
+    'Drug Induced',
+    'Pregnancy'
+ ]       
 });
 
 //thisComplaint.save();
@@ -72,14 +85,38 @@ plan: String
 const Act = mongoose.model("Act", actSchema);
 
 var thisAction = new Act ({
-   systaction:'Brainpaction' ,
-   age: "ma",
+   systaction:'Skinpaction',
+   age: "i",
    gender: "m",   
-   impression: 'Tuberculosis' ,
+   impression: 'Vitiligo',
    plan:   "Go to the hospital"
 });
 
   //thisAction.save();
+
+  //  Act.findOne({
+//  systaction: "Chestpaction",
+//  age: "ma",
+//  gender: "m",   
+//  impression:'Kidney Disease',
+//  plan:   "Go to the hospital"
+//  },
+//  function(err, foundDoc){
+//   if(err){console.log(err)}
+//   if(foundDoc) {console.log("Document saved already")}
+//   else{
+//   var thisAction = new Act ({
+//  systaction: "Chestpaction",
+//  age: "ma",
+//  gender: "m",   
+//  impression:'Kidney Disease',
+//  plan:   "Go to the hospital"
+// });
+// thisAction.save();
+// console.log("New document entered");
+//   }
+  
+//  });
  
 
 
@@ -102,9 +139,12 @@ var  thisComplaintcond
  = new Diagcond ({
  systontainer: "Womenpontainer",
  age: "ea",
- cond: 'undefp',
- symptom:"CgenBodyWeakness" ,
- causes: [ 'Coronary Artery Desease', 'Thyroid Disease', 'Amyloidosis', 'Anemia', 'Emotional Stress', 'Physical Stress', 'Sleep Deprivation', 'Heart Failure', 'Poorly Controlled Diabetes Mellitus', 'Valvular Heart Disease', 'Stroke','Drug Induced',]
+ cond: 'pplus',
+ symptom:"LegAnkleSwelling" ,
+ causes: [ 
+   'Pregnancy Unlikely' 
+    
+ ]
 
 });
 
@@ -123,6 +163,7 @@ plan: String
 
 
 //  'pplus' "notp"  'undefp'
+// 't'  'ma'  'ea'
 const Actcond = mongoose.model("Actcond", actcondSchema);
 
 var thisActioncond = new Actcond ({
@@ -136,12 +177,40 @@ var thisActioncond = new Actcond ({
  //thisActioncond.save();
 
 
-// Act.deleteOne({
-//   systaction:'Orthopaction' ,
-//    age: "ma",
-//    gender: "m",   
-//    impression: 'Kyphosis(exaggerated forward curvature of the spine)',
+
+//  "notp"  'undefp'  'pplus'
+// 't'  'ma'  'ea'
+//   Actcond.findOne({
+//    systaction: "Womenpaction",
+//    age: "ea",
+//    cond: 'undefp',   
+//    impression:'Dilated Cardiomyopathy',
 //    plan:   "Go to the hospital"
+//  },
+//  function(err, foundDoc){
+//   if(err){console.log(err)}
+//   if(foundDoc) {console.log("Document saved already")}
+//   else{
+//  var thisActioncond = new Actcond  ({
+//    systaction: "Womenpaction",
+//    age: "ea",
+//    cond:'undefp' ,   
+//    impression: 'Dilated Cardiomyopathy',
+//    plan:   "Go to the hospital"
+// });
+// thisActioncond.save();
+// console.log("New document entered");
+//   }
+  
+//  });
+
+
+// Act.deleteOne({
+//     systaction: "Eyepaction",
+//     age: "ma",
+//     gender: "m",   
+//     impression:'Pregnancy',
+//     plan:   "Go to the hospital"
 //     }, function(err){
 //      if(err){
 //       console.log(err)
@@ -192,22 +261,33 @@ var thisActioncond = new Actcond ({
 
 
 //   Act.findOne({
-//    systaction: "Brainpaction",
-//    age: "i",
+//    systaction: "Entpaction",
+//    age: "ma",
 //    gender: "m",   
-//    impression:'Tuberculosis' ,
+//    impression: 'Ludwig\'s Angina',
 //    //plan:   "Go to the hospital"
 //  },
 //  function(err, foundDoc){
 //   if(err){console.log(err)}else {console.log(foundDoc)} 
 //  });
 
+  
+    
+    
+    
+     
+ 
 
-//   Diag.findOne({
-//    systontainer: "Brainpontainer",
-//   age: "i",
+
+  
+
+
+
+//  Diag.findOne({
+//  systontainer: "Chestpontainer",
+//  age: "ma",
 //  gender: "m",
-//  symptom:"RlowFever"
+//  symptom:"LegAnkleSwelling",
 //  },
 //  function(err, foundDoc){
 //   if(err){console.log(err)}else {console.log(foundDoc)}
@@ -241,6 +321,55 @@ var thisActioncond = new Actcond ({
   
 //  });
 
+
+
+// Diag.updateOne({
+// systontainer: "Chestpontainer",
+// //age: "i",
+// symptom: "LegAnkleSwelling"
+// }, 
+// {
+//   causes: [
+//      'Overweight',
+//      'Sedentary Lifestyle',
+//      'Salty Dietary Lifestyle',
+//      'Protein Deficient Dietary Lifestyle',
+//      'Drug Induced',
+//      'Blood Clot in Leg',
+//      'Local Trauma',
+//      'Local Infection',
+//      'Heart Failure',
+//      'Lymphedema',
+//      'Liver Disease',
+//      'Kidney Disease',
+//     'Congenital Heart Defects',  
+//     'Dilated Cardiomyopathy',    
+//     'Amyloidosis',
+//     'Infective Endocarditis',    
+//     'Valvular Heart Disease',    
+    
+
+//   ]
+// }, function(err){
+//    if(err){console.log(err)}
+//    else{console.log("successfully updated document(s)")}
+// });
+
+
+
+// Act.updateMany({
+//    systaction:'Brainpaction' ,  
+//    impression: 'Substance Use Disorder'
+// }, {}, 
+   
+//    function(err){
+//    if(err){console.log(err)}
+//    else{console.log("Document(s) successfully updated")}
+// });
+
+
+
+'Pregnancy',
 //  'pplus' "notp"  'undefp'
 
 //  Diagcond.deleteOne({
@@ -257,12 +386,15 @@ var thisActioncond = new Actcond ({
 
 
 
+
+
+
+
 // Diagcond.findOne({
 // systontainer: "Womenpontainer",
 //  age: "ma",
 //  cond:"notp" ,
-//  symptom:"RlowFever"
- 
+//  symptom:"CgenBodyWeakness"
 //  },
 //  function(err, foundDoc){
 //   if(err){console.log(err)}else {console.log(foundDoc)}
