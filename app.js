@@ -369,7 +369,7 @@ var thisActioncond = new Actcond ({
 
 
 
-'Pregnancy',
+//'Pregnancy',
 //  'pplus' "notp"  'undefp'
 
 //  Diagcond.deleteOne({
@@ -446,6 +446,14 @@ app.get("/contact", function(req, res){
 app.get("/terms-of-use", function(req, res){
 
    res.render("terms-of-use");
+});
+app.get("/success", function(req, res){
+
+   res.render("success");
+});
+app.get("/welcome", function(req, res){
+
+   res.render("welcome");
 });
 
 app.get("/intropreventive", function(req, res){
